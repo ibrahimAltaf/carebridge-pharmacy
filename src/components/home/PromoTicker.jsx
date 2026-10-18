@@ -1,27 +1,19 @@
-import { Sparkles, Sun } from "lucide-react"
-
 const messages = [
-  { icon: Sparkles, text: "Everyday wellness essentials" },
-  { icon: null, text: "Free standard delivery on demo orders over $35" },
-  { icon: Sun, text: "Simple shopping for everyday care" },
-  { icon: Sparkles, text: "Explore vitamins, first aid & wellness" },
+  "Everyday wellness essentials",
+  "Free standard delivery on demo orders over $35",
+  "Simple shopping for everyday care",
+  "Explore vitamins, first aid & wellness",
 ]
 
 function TickerRow({ hidden = false }) {
   return (
     <div className="flex shrink-0 items-center" aria-hidden={hidden || undefined}>
-      {messages.map((message) => {
-        const Icon = message.icon
-        return (
-          <span key={message.text} className="flex items-center">
-            <span className="inline-flex items-center gap-2 px-6 text-[13px] font-medium">
-              {Icon ? <Icon className="h-3.5 w-3.5 text-pine" aria-hidden="true" /> : null}
-              {message.text}
-            </span>
-            <span className="h-1 w-1 rounded-full bg-white/35" aria-hidden="true" />
-          </span>
-        )
-      })}
+      {messages.map((text) => (
+        <span key={text} className="flex items-center">
+          <span className="px-6 text-[13px] font-medium">{text}</span>
+          <span className="h-1 w-1 rounded-full bg-white/35" aria-hidden="true" />
+        </span>
+      ))}
     </div>
   )
 }
